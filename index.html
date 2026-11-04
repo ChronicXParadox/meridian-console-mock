@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian Console – Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<section id="login">
+  <div class="login-card">
+    <div class="brand"><span class="logo"></span>Meridian Console</div>
+    <p class="demo-banner">Demonstration only. Fictional data, simulated sign-in, no real security.</p>
+    <h1>Sign in</h1>
+    <form id="loginForm" novalidate>
+      <label>Username<input id="lu" autocomplete="off" placeholder="admin.demo"></label>
+      <label>Password
+        <span class="pw"><input id="lp" type="password" placeholder="Password"><button type="button" id="togglePw" aria-label="Show password">Show</button></span>
+      </label>
+      <label class="check"><input type="checkbox" id="remember"> Remember me on this browser</label>
+      <p id="loginErr" class="err" role="alert"></p>
+      <button class="btn primary wide" id="loginBtn"><span class="spin"></span><span class="t">Sign in</span></button>
+    </form>
+    <details class="demo-creds" open>
+      <summary>Demo accounts (click to fill)</summary>
+      <table>
+        <tr data-u="admin.demo" data-p="DemoAdmin2026!"><td>admin.demo</td><td>Administrator</td></tr>
+        <tr data-u="moderator.demo" data-p="DemoMod2026!"><td>moderator.demo</td><td>Moderator</td></tr>
+        <tr data-u="support.demo" data-p="DemoSupport2026!"><td>support.demo</td><td>Support</td></tr>
+        <tr data-u="viewer.demo" data-p="DemoViewer2026!"><td>viewer.demo</td><td>Viewer</td></tr>
+      </table>
+      <p class="hint">Admin password: DemoAdmin2026! — others are filled in when you click a row.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ APP ============ -->
+<div id="app" hidden>
+  <aside id="sidebar">
+    <div class="brand"><span class="logo"></span><span class="lbl">Meridian Console</span></div>
+    <nav id="nav"></nav>
+    <button class="collapse" id="collapse" aria-label="Collapse sidebar">«</button>
+  </aside>
+  <div class="main">
+    <header>
+      <button class="icon menu" id="menuBtn" aria-label="Menu">☰</button>
+      <span class="badge demo">DEMO</span>
+      <h2 id="title"></h2>
+      <div class="spacer"></div>
+      <button class="icon" id="themeBtn" aria-label="Toggle theme">◐</button>
+      <div class="me"><span class="avatar" id="meAv"></span><span><b id="meName"></b><small id="meRole"></small></span></div>
+      <button class="btn" id="logout">Sign out</button>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<div id="modalWrap" hidden><div class="modal" role="dialog" aria-modal="true"></div></div>
+<div id="toasts"></div>
+<script src="script.js"></script>
+</body>
+</html>
